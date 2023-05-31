@@ -24,7 +24,10 @@ export default (appInfo: EggAppInfo) => {
     consoleLevel: 'DEBUG'
   }
   config.mongoose = {
-    url: 'mongodb://localhost:27017/lego'
+    url: 'mongodb://localhost:27017/lego',
+    options:{
+      useUnifiedTopology: true
+    }
   }
   config.bcrypt = {
     saltRounds: 10
