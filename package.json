@@ -1,0 +1,89 @@
+{
+  "name": "lego-backend",
+  "version": "1.0.0",
+  "description": "test",
+  "private": true,
+  "egg": {
+    "typescript": true,
+    "declarations": true
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-lego-backend",
+    "stop": "egg-scripts stop --title=egg-server-lego-backend",
+    "dev": "egg-bin dev",
+    "debug": "egg-bin debug",
+    "test-local": "egg-bin test",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "cov": "egg-bin cov",
+    "tsc": "ets && tsc -p tsconfig.json",
+    "ci": "npm run lint && npm run cov && npm run tsc",
+    "autod": "autod",
+    "lint": "eslint . --ext .ts",
+    "clean": "ets clean",
+    "upload": "node ./webpack/uploadToOSS.js",
+    "build:template": "npx webpack --config webpack/webpack.config.js",
+    "build:template&upload": "npm run build:template && npm run upload"
+  },
+  "dependencies": {
+    "@alicloud/dysmsapi20170525": "^2.0.2",
+    "@alicloud/openapi-client": "^0.3.5",
+    "axios": "^0.21.4",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.5.1",
+    "dotenv": "^10.0.0",
+    "egg": "^2.6.1",
+    "egg-bcrypt": "^1.1.0",
+    "egg-cors": "^2.2.3",
+    "egg-jwt": "^3.1.7",
+    "egg-mongoose": "^3.3.1",
+    "egg-oss": "^2.0.0",
+    "egg-redis": "^2.4.0",
+    "egg-scripts": "^2.6.0",
+    "egg-validate": "^2.0.2",
+    "egg-view-nunjucks": "^2.3.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "lego-components": "^0.1.7",
+    "mini-css-extract-plugin": "^2.4.5",
+    "mongoose-sequence": "^5.3.1",
+    "nanoid": "^3.1.30",
+    "sharp": "^0.29.3",
+    "stream-wormhole": "^1.1.0",
+    "vue": "^3.2.22",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1"
+  },
+  "devDependencies": {
+    "@types/ali-oss": "^6.16.2",
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/mocha": "^2.2.40",
+    "@types/node": "^16.11.7",
+    "@types/sharp": "^0.29.3",
+    "@types/supertest": "^2.0.0",
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg-bin": "^4.11.0",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.16.0",
+    "eslint": "^6.7.2",
+    "eslint-config-egg": "^8.0.0",
+    "tslib": "^1.9.0",
+    "typescript": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "eslintIgnore": [
+    "coverage"
+  ],
+  "author": "viking zhang",
+  "license": "MIT"
+}
